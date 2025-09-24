@@ -6,15 +6,16 @@ import vehicleRoutes from "./routes/vehicleRoutes.js";
 import bookingRoutes from "./routes/bookingRoutes.js";
 import cors from "cors";
 
+
+dotenv.config();
+connectDB();
+
+const app = express();
 app.use(cors({
   origin: ["http://localhost:3000"],
   methods: ["GET", "POST", "PUT", "DELETE"],
   credentials: true
 }));
-dotenv.config();
-connectDB();
-
-const app = express();
 app.use(bodyParser.json());
 
 // Routes
