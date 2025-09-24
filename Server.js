@@ -4,7 +4,13 @@ import dotenv from "dotenv";
 import connectDB from "./config/db.js";
 import vehicleRoutes from "./routes/vehicleRoutes.js";
 import bookingRoutes from "./routes/bookingRoutes.js";
+import cors from "cors";
 
+app.use(cors({
+  origin: ["http://localhost:3000"],
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  credentials: true
+}));
 dotenv.config();
 connectDB();
 
